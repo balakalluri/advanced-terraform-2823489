@@ -31,7 +31,7 @@ data "aws_iam_user" "terraform" {
 resource "aws_s3_bucket" "red30-tfremotestate" {
   bucket = var.bucket_name
   force_destroy = true
-  acl = "private"
+#   acl = "private"
 #   aws_s3_bucket_versioning = true
 #   versioning {
 #     enabled = true
@@ -69,7 +69,7 @@ resource "aws_s3_bucket_public_access_block" "red30-tfremotestate" {
 # DYNAMODB TABLE
 # //////////////////////////////
 resource "aws_dynamodb_table" "tf_db_statelock" {
-  name           = "red30-tfstatelock"
+  name           = "red30-tfstatelock-bk"
   read_capacity  = 20
   write_capacity = 20
   hash_key       = "LockID"
