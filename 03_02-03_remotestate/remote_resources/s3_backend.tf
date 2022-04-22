@@ -32,7 +32,7 @@ resource "aws_s3_bucket" "red30-tfremotestate" {
   bucket = var.bucket_name
   force_destroy = true
   acl = "private"
-  aws_s3_bucket_versioning = true
+#   aws_s3_bucket_versioning = true
 #   versioning {
 #     enabled = true
 #   }
